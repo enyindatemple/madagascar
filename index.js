@@ -6,6 +6,7 @@ const app = express();
 app.use(express.static('madagascar')); 
 
 //Sendind and Recieving Request
+app.get('/', (req, resp) => resp.sendFile('./index.html', {root: __dirname}));
 app.get('/index.html', (req, resp) => resp.sendFile('./index.html', {root: __dirname}));
 app.get('/about.html', (req, resp) => resp.sendFile('./pages/about.html', {root: __dirname}));
 app.get('/contact.html', (req, resp) => resp.sendFile('./pages/contact.html', {root: __dirname}));
